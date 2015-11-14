@@ -1,0 +1,9 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/Users/john/go/src/github.com/kujohn/test'
+let g:netrw_dirhist_2='/Users/john/.docker'
+let g:netrw_dirhist_3='/Users/john/go/src/github.sol/facebook-ads-service.git/config'
+let g:netrw_dirhist_4='/Users/john/src/react-native/IntegrationTests/IntegrationTests.xcodeproj'
+let g:netrw_dirhist_5='/Users/john/src/react-native/IntegrationTests/IntegrationTests.xcodeproj/project.xcworkspace'
+let g:netrw_dirhist_6='/Users/john/go/src/github.sol/facebook-ads-service.git'
+let g:netrw_dirhist_7='/Users/john/src/dotfiles/.git'

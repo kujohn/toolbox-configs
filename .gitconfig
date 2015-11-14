@@ -1,0 +1,19 @@
+[user]
+	name = John Ku
+[branch]
+	autosetupmerge = true
+[gc]
+	auto = 1
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+[alias]
+    trim-branches = !git branch --merged master | /bin/grep -v -e " master" | xargs -pI '{}' git branch -d '{}'
+    st = status
+    tree = log --graph --pretty=oneline --abbrev-commit --decorate
+
+[core]
+	editor = vim
+[mergetool]
+	keepBackup = true
