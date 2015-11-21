@@ -21,27 +21,36 @@ syntax enable
 
 " color schemes
 let &t_Co=256
-colorscheme wells-colors
+set background=dark
+color mango
 
-" toggle line number
-nmap <C-N><C-N> :set invnumber<CR>
+" airline
+let g:airline_powerline_fonts = 1
 
+" nerd tree
+map <C-n> :NERDTreeToggle<CR>
+map <C-g> :let g:go_fmt_command = ""<CR>
 
-autocmd BufWritePre * :%s/\s\+$//e
-au FileType * setlocal formatoptions-=cro
+"autocmd BufWritePre * :%s/\s\+$//e
+"au FileType * setlocal formatoptions-=cro
 au BufNewFile,BufRead *.go set filetype=go
 
 " GO Syntax Highlighting
 filetype plugin indent off
 set runtimepath+=$GOROOT/misc/vim
 filetype plugin indent on
-"
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
 " GO automatic import, go-run mapping, go-docs
 let g:go_fmt_command = "goimports"
 au FileType go nmap <leader>r <Plug>(go-run)
 au FileType go nmap <leader>b <Plug>(go-build)
 au FileType go nmap <leader>t <Plug>(go-test)
 au FileType go nmap <leader>c <Plug>(go-coverage)
+au FileType go nmap <Leader>i <Plug>(go-info)
 au FileType go nmap <Leader>gd <Plug>(go-doc)
 au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
 au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
