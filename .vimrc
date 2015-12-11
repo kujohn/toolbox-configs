@@ -27,10 +27,6 @@ color mango
 " airline
 let g:airline_powerline_fonts = 1
 
-" nerd tree
-map <C-n> :NERDTreeToggle<CR>
-map <C-g> :let g:go_fmt_command = ""<CR>
-
 "autocmd BufWritePre * :%s/\s\+$//e
 "au FileType * setlocal formatoptions-=cro
 au BufNewFile,BufRead *.go set filetype=go
@@ -58,7 +54,9 @@ au FileType go nmap <Leader>ds <Plug>(go-def-split)
 au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
 au FileType go nmap <Leader>dt <Plug>(go-def-tab)
 
-" PATHOGEN
+" Goyo - markdown zen mode
+nnoremap <silent> <leader>z :Goyo<cr>
+
 execute pathogen#infect()
 syntax on
 filetype plugin indent on

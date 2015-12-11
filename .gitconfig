@@ -1,5 +1,6 @@
 [user]
 	name = John Ku
+	email = john.cmyk@gmail.com
 [branch]
 	autosetupmerge = true
 [gc]
@@ -17,3 +18,9 @@
 	editor = vim
 [mergetool]
 	keepBackup = true
+[credential]
+	helper = osxkeychain
+[push]
+	default = simple
+[url "git@github.sol:"]
+	insteadOf = https://github.sol
