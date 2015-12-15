@@ -18,6 +18,8 @@ export DOCKER_HOST=tcp://127.0.0.1:4243/
 eval "$(docker-machine env default)"
 
 
+export SYS_ENV="dev"
+
 if [ -f `brew --prefix`/etc/bash_completion ]; then
     . `brew --prefix`/etc/bash_completion
 fi

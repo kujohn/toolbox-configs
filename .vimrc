@@ -27,20 +27,10 @@ color mango
 " airline
 let g:airline_powerline_fonts = 1
 
-"autocmd BufWritePre * :%s/\s\+$//e
-"au FileType * setlocal formatoptions-=cro
+autocmd BufWritePre * :%s/\s\+$//e
+au FileType * setlocal formatoptions-=cro
 au BufNewFile,BufRead *.go set filetype=go
 
-" GO Syntax Highlighting
-filetype plugin indent off
-set runtimepath+=$GOROOT/misc/vim
-filetype plugin indent on
-let g:go_highlight_functions = 1
-let g:go_highlight_methods = 1
-let g:go_highlight_structs = 1
-let g:go_highlight_operators = 1
-let g:go_highlight_build_constraints = 1
-" GO automatic import, go-run mapping, go-docs
 let g:go_fmt_command = "goimports"
 au FileType go nmap <leader>r <Plug>(go-run)
 au FileType go nmap <leader>b <Plug>(go-build)
