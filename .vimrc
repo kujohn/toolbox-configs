@@ -24,9 +24,6 @@ let &t_Co=256
 set background=dark
 color mango
 
-" airline
-let g:airline_powerline_fonts = 1
-
 autocmd BufWritePre * :%s/\s\+$//e
 au FileType * setlocal formatoptions-=cro
 au BufNewFile,BufRead *.go set filetype=go

@@ -49,11 +49,11 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(z tmux gitfast jsontools)
 
 # User configuration
 
-export PATH="/opt/local/bin:/opt/local/sbin:/Users/john/go/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/Users/john/bin:/Users/john/go/bin"
+export PATH="/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/Users/john/bin:/Users/john/go/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -97,3 +97,8 @@ export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 export GO15VENDOREXPERIMENT=1
+
+# DEV
+export SYS_ENV=dev
+export CONSUL_ADDR=consul-dev-a.la.sol:8500
+eval "$(docker-machine env default)"
