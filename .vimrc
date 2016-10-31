@@ -19,10 +19,13 @@ set cursorline
 syntax on
 syntax enable
 
+map <C-n> :NERDTreeToggle<CR>
+
+
 " color schemes
 let &t_Co=256
-set background=dark
-color mango
+set cursorline
+hi CursorLine term=bold cterm=bold
 
 autocmd BufWritePre * :%s/\s\+$//e
 au FileType * setlocal formatoptions-=cro
@@ -40,6 +43,18 @@ au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
 au FileType go nmap <Leader>ds <Plug>(go-def-split)
 au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
 au FileType go nmap <Leader>dt <Plug>(go-def-tab)
+map <Leader>cd :cd %:p:h<CR>
+
+" Ctrlp & silver searcher
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlPMixed'
+
+if executable('ag')
+    set grepprg=ag\ --nogroup\ --nocolor
+
+    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+    let g:ctrlp_use_caching = 0
+endif
 
 " Goyo - markdown zen mode
 nnoremap <silent> <leader>z :Goyo<cr>
@@ -47,12 +62,3 @@ nnoremap <silent> <leader>z :Goyo<cr>
 execute pathogen#infect()
 syntax on
 filetype plugin indent on
-
-
-" tmux-vim navigator
-let g:tmux_navigator_no_mappings = 1
-nnoremap <silent> {Left-mapping} :TmuxNavigateLeft<cr>
-nnoremap <silent> {Down-Mapping} :TmuxNavigateDown<cr>
-nnoremap <silent> {Up-Mapping} :TmuxNavigateUp<cr>
-nnoremap <silent> {Right-Mapping} :TmuxNavigateRight<cr>
-nnoremap <silent> {Previous-Mapping} :TmuxNavigatePrevious<cr>
